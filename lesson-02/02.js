@@ -7,8 +7,8 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 = Math.floor(Math.random() * 6)
-let dice2 = Math.floor(Math.random() * 6)
+let dice1 = Math.ceil (Math.random() * 6)
+let dice2 = Math.ceil (Math.random() * 6)
 let isWinningDouble = false
 
 if (dice1 === dice2) {
