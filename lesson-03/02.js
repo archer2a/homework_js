@@ -3,10 +3,10 @@
 
 function isEven(numb) {
     if (numb % 2 === 0) {
-        return false
-    }
-    else if (numb % 2 === 1) {
         return true
+    }
+    else {
+        return false
     }
 }
 
