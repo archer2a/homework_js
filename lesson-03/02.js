@@ -1,4 +1,14 @@
 // Разработайте функцию isEven, которая определяет, чётное ли число.
 // Функция должна возвращать true, если число чётное, и false — в противном случае
 
-function isEven() {}
+function isEven(numb) {
+    if (numb % 2 === 0) {
+        return false
+    }
+    else if (numb % 2 === 1) {
+        return true
+    }
+}
+
+const whatIsNumber = isEven(6)
+console.log(whatIsNumber)
