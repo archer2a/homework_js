@@ -21,6 +21,8 @@ const WEB_TECH_IMAGES = [
 
 
   const sliderImg = document.getElementById("web-tech-image");
+sliderImg.src = WEB_TECH_IMAGES[0]
+  //
   const prevBtn = document.getElementById("prev-button");
   const nextBtn = document.getElementById("next-button");
 
@@ -52,7 +54,7 @@ const WEB_TECH_IMAGES = [
 
 
 
-
+  //
 
 
 
