@@ -49,7 +49,7 @@ sliderImg.src = WEB_TECH_IMAGES[0]
   });
 
   // Инициализация первого изображения
-  displayImage();
+
 
 
 
