@@ -20,35 +20,32 @@ const WEB_TECH_IMAGES = [
 
 
 
-  const sliderImg = document.getElementById("web-tech-image");
+const sliderImg = document.getElementById("web-tech-image");
 const prevBtn = document.getElementById("prev-button");
-  const nextBtn = document.getElementById("next-button");
-  let currentIndex = 0;
-  function displayImage() {
-    sliderImg.src = WEB_TECH_IMAGES[currentIndex];
-    for (let i = 0; i < WEB_TECH_IMAGES.length; i++) {
-      if (i === currentIndex) {
-        sliderImg.classList.add('active');
-      } else {
-        sliderImg.classList.remove('active');
-      }
+const nextBtn = document.getElementById("next-button");
+let currentIndex = 0;
+
+const changeImage = (rightDirection = true) => {
+  if (rightDirection) {
+    if (currentIndex === WEB_TECH_IMAGES.length - 1) {
+      currentIndex = 0
+    } else {
+      currentIndex += 1;
+    }
+  } else {
+    if (currentIndex === 0) {
+      currentIndex = WEB_TECH_IMAGES.length - 1;
+    } else {
+      currentIndex -= 1;
     }
   }
-  displayImage();
-  nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    if (currentIndex >= WEB_TECH_IMAGES.length) {
-      currentIndex = 0;
-    }
-    displayImage();
-  });
-  prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = WEB_TECH_IMAGES.length - 1;
-    }
-    displayImage();
-  })
 
+  sliderImg.setAttribute("src", WEB_TECH_IMAGES[currentIndex]);
+}
 
+const handleRight = () => changeImage()
+const handleLeft = () => changeImage(false)
+
+nextBtn.addEventListener("click", handleRight);
+prevBtn.addEventListener("click", handleLeft);
 
