@@ -21,13 +21,9 @@ const WEB_TECH_IMAGES = [
 
 
   const sliderImg = document.getElementById("web-tech-image");
-
-  //
-  const prevBtn = document.getElementById("prev-button");
+const prevBtn = document.getElementById("prev-button");
   const nextBtn = document.getElementById("next-button");
-
   let currentIndex = 0;
-
   function displayImage() {
     sliderImg.src = WEB_TECH_IMAGES[currentIndex];
     for (let i = 0; i < WEB_TECH_IMAGES.length; i++) {
@@ -36,11 +32,9 @@ const WEB_TECH_IMAGES = [
       } else {
         sliderImg.classList.remove('active');
       }
-
-
     }
   }
-
+  displayImage();
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     if (currentIndex >= WEB_TECH_IMAGES.length) {
@@ -48,30 +42,13 @@ const WEB_TECH_IMAGES = [
     }
     displayImage();
   });
-
   prevBtn.addEventListener('click', () => {
     currentIndex--;
     if (currentIndex < 0) {
       currentIndex = WEB_TECH_IMAGES.length - 1;
     }
     displayImage();
-  });
-
-  // Инициализация первого изображения
+  })
 
 
 
-
-
-  //
-
-
-// // Первоначальная проверка первого изображения
-// local_cypress_1.cy.get('#web-tech-image').should('have.attr', 'src', WEB_TECH_IMAGES[0], 'Первоначальное изображение должно соответствовать первому в массиве.'); // Тестирование переключения вперед через изображения
-// for (let i = 1; i < WEB_TECH_IMAGES.length; i++) {
-//   local_cypress_1.cy.get('#next-button').click();
-//   local_cypress_1.cy.get('#web-tech-image').should('have.attr', 'src', WEB_TECH_IMAGES[i], `При нажатии кнопки 'next', ожидается изображение по индексу ${i}`);
-// } // Тест зацикливания к первому изображению после последнего
-//
-// local_cypress_1.cy.get('#next-button').click();
-// local_cypress_1.cy.get('#web-tech-image').should('have.attr', 'src', WEB_TECH_IMAGES[0], 'После достижения конца, нажатие кнопки "next" должно возвращать к первому изображению');
